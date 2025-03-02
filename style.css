@@ -1,0 +1,44 @@
+/* CSS */
+const style = document.createElement('style');
+style.innerHTML = `
+  .image-style {
+    position: absolute;
+    width: 12%; /* Reduzco el tamaño de las imágenes */
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    z-index: 2;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra ligera con desplazamiento y difuminado */
+  }
+  .image-style:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más destacada al pasar el mouse */
+  }
+  .image-style.clicked {
+    transform: scale(2.25); /* Aumento el tamaño al 250% */
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4); /* Sombra más fuerte cuando se hace clic en la imagen */
+  }
+  .overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.25s ease-in-out;
+    z-index: 1;
+  }
+  .overlay.active {
+    background: rgba(0, 0, 0, 0.15);
+  }
+/* Agregar overlay semitransparente */
+/* Estilos del overlay de pantalla completa */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+document.head.appendChild(style);
